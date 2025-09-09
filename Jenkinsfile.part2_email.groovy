@@ -4,7 +4,7 @@ pipeline {
   triggers { pollSCM('H/5 * * * *') }
 
   environment {
-    EMAIL_TO   = 's224740132@deakin.edu.au'       // change if needed
+    EMAIL_TO   = 'sandarawijethunga97@gmail.com'       // change if needed
     EMAIL_FROM = 'sandarawijethunga4@gmail.com'   // must match the Gmail account you authenticated
   }
 
