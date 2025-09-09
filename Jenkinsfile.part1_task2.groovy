@@ -1,19 +1,18 @@
-// Jenkinsfile.part1_task2.groovy
 pipeline {
   agent any
-  options { timestamps(); ansiColor('xterm') }
-  triggers { pollSCM('H/5 * * * *') } // Poll every ~5 mins
+  options { timestamps() }
+  triggers { pollSCM('H/5 * * * *') }
   stages {
     stage('Checkout') {
       steps {
-        git branch: 'main', url: 'https://github.com/<YOUR_GITHUB_USERNAME>/8.2CDevSecOps.git'
+        git branch: 'main', url: 'https://github.com/Sandara-Git/8.2CDevSecOps.git'
       }
     }
     stage('Install Dependencies') {
       steps { sh 'npm install' }
     }
     stage('Run Tests') {
-      steps { sh 'npm test || true' } // allow pipeline to continue
+      steps { sh 'npm test || true' }
     }
     stage('Generate Coverage Report') {
       steps {
